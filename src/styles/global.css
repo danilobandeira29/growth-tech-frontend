@@ -5,6 +5,11 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
+
+  --clr-blue-primary: rgb(0, 173, 238);
+  --clr-black-primary: rgb(0, 0, 0);
+  --clr-white-primary: rgb(255, 255, 255);
+  --clr-gray-secundary: #eee;
 }
 
 * {
@@ -19,5 +24,82 @@ html {
 
 body {
   font-size: 1.8rem;
+}
+
+body, input, button {
   font-family: var(--ff-primary);
+}
+
+.container {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-top: 2rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+.title-secundary {
+  margin-top: 4rem;
+}
+
+main form.form-user {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--clr-black-primary);
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  padding: 1rem;
+  text-align: center;
+}
+
+a:active {
+  opacity: .7;
+  background-color: var(--clr-gray-secundary);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li + li {
+  margin-top: .5rem;
+}
+
+input, button {
+  padding: 1rem;
+}
+
+label {
+  margin-bottom: .5rem;
+}
+
+label + input {
+  margin-bottom: 1rem;
+}
+
+button {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  background-color: var(--clr-blue-primary);
+  color: var(--clr-white-primary);
+  border: none;
+}
+
+input:focus {
+  outline-color: var(--clr-blue-primary);
 }
