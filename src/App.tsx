@@ -1,12 +1,27 @@
+import { useState } from 'react'
 import logoGrowth from './assets/logo.png'
 import './styles/global.css'
 
 function App() {
+  const [stateMenuButton, setStateMenuButton] = useState(false)
+
+  function handleMenuButton() {
+    setStateMenuButton(!stateMenuButton)
+  }
+
   return (
     <div className='container'>
       <img src={logoGrowth} alt='Growth tech logo'/>
       <header className='header'>
-        <nav>
+        <button type='button' className='menu-button' onClick={handleMenuButton}>
+          Menu
+          <div className='menu-icon'>
+            <span className='first-bar'></span>
+            <span className='second-bar'></span>
+            <span className='third-bar'></span>
+          </div>
+        </button>
+        {stateMenuButton ? (<nav>
           <ul>
             <li>
               <a href='/user'>Cadastrar usuário</a>
@@ -18,7 +33,7 @@ function App() {
               <a href='/allPost'>Listar post</a>
             </li>
           </ul>
-        </nav>
+        </nav>) : null}
       </header>
       <main>
         <h2 className='title-secundary'>Formulário para cadastro de usuário</h2>
@@ -50,7 +65,7 @@ function App() {
           <label htmlFor='companyName'>Nome da empresa</label>
           <input type='text' placeholder='Nome da empresa' name='companyName' />
 
-          <button type='submit'>
+          <button type='submit' className='submit-button'>
             Cadastrar
           </button>
         </form>
