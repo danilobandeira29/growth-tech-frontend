@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
 const MenuNavigation: FC = () => {
@@ -6,13 +7,13 @@ const MenuNavigation: FC = () => {
     <nav>
       <ul>
         <li>
-          <a href='/'>Cadastrar usuário</a>
+          <Link to='/'>Cadastrar usuário</Link>
         </li>
         <li>
-          <a href='/createPost'>Criar post</a>
+          <Link to='/createPost'>Criar post</Link>
         </li>
         <li>
-          <a href='/posts'>Listar post</a>
+          <Link to='/posts'>Listar post</Link>
         </li>
       </ul>
     </nav>
