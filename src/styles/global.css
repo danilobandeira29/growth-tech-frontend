@@ -8,6 +8,7 @@
 
   --clr-blue-primary: rgb(0, 173, 238);
   --clr-black-primary: rgb(0, 0, 0);
+  --clr-black-secundary: rgb(36, 36, 36);
   --clr-white-primary: rgb(255, 255, 255);
   --clr-gray-secundary: #eee;
 }
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 body, input, button, textarea {
@@ -84,4 +85,39 @@ span + span {
 
 input:focus {
   outline-color: var(--clr-blue-primary);
+}
+
+li + li {
+  margin-top: 2rem;
+}
+
+.post-container {
+  box-shadow: 0 0 10px rgb(219, 219, 219);
+  padding: 1.5rem;
+}
+
+.post-container strong {
+  font-weight: var(--fw-medium);
+  margin-bottom: .2rem;
+  font-size: 1.7rem;
+}
+
+.post-container span {
+  font-size: 1.4rem;
+  opacity: .7;
+}
+
+.post-container p {
+  font-size: 1.5rem;
+}
+
+.post-container span,
+.post-container p {
+  color: var(--clr-black-secundary);
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
