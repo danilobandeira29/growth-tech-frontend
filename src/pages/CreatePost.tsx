@@ -2,6 +2,8 @@ import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SubmitFormParams } from '../dtos/CreatePost'
 import InputWithLabel from '../components/InputWithLabel'
+import Button from '../components/Button'
+import { Menu, MessageSquare } from 'react-feather'
 import logoGrowth from '../assets/logo.png'
 import '../styles/global.css'
 
@@ -22,14 +24,13 @@ const Post: FC = () => {
     <div className='container'>
       <img src={logoGrowth} alt='Growth tech logo'/>
       <header className='header'>
-        <button type='button' className='menu-button' onClick={handleMenuButton}>
+        <Button 
+          type='button'
+          icon={Menu}
+          onClick={handleMenuButton}
+        >
           Menu
-          <div className='menu-icon'>
-            <span className='first-bar'></span>
-            <span className='second-bar'></span>
-            <span className='third-bar'></span>
-          </div>
-        </button>
+        </Button>
         {stateMenuButton ? (<nav>
           <ul>
             <li>
@@ -68,9 +69,9 @@ const Post: FC = () => {
             ref={register({ required: true})}
           />
 
-          <button type='submit' className='submit-button'>
+          <Button type='submit' icon={MessageSquare}>
             Criar
-          </button>
+          </Button>
         </form>
       </main>
     </div>
