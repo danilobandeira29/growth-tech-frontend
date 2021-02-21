@@ -102,32 +102,6 @@ label + input {
   margin-bottom: 1rem;
 }
 
-button {
-  font-size: 1.8rem;
-  margin-top: 2rem;
-  background-color: var(--clr-blue-primary);
-  color: var(--clr-white-primary);
-  border: none;
-  text-transform: uppercase;
-}
-
-.menu-button {
-  display: flex;
-  align-items: center;
-}
-
-.menu-button div {
-  order: -1;
-  margin-right: 1rem;
-}
-
-.menu-button div span {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background: var(--clr-white-primary);
-}
-
 span + span {
   margin-top: .3rem;
 }
