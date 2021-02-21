@@ -25,14 +25,12 @@ const Post: FC = () => {
           <InputWithLabel
             name='userId'
             labelAndPlaceholder='Id do usuário'
-            type='text'
             refForm={register({ required: true})}
           />
 
           <InputWithLabel
             name='title'
             labelAndPlaceholder='Título do post'
-            type='text'
             refForm={register({ required: true})}
           />
 
