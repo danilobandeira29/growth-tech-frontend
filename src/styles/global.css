@@ -94,6 +94,11 @@ li + li {
 .post-container {
   box-shadow: 0 0 10px rgb(219, 219, 219);
   padding: 1.5rem;
+  width: 100%;
+}
+
+strong {
+  display: block;
 }
 
 .post-container strong {
@@ -103,7 +108,7 @@ li + li {
 }
 
 .post-container span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   opacity: .7;
 }
 
