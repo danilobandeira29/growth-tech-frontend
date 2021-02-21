@@ -1,0 +1,15 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  background-color: var(--clr-blue-primary);
+  color: var(--clr-white-primary);
+  border: none;
+  text-transform: uppercase;
+}
+
+button svg {
+  margin-right: 1rem;
+}
