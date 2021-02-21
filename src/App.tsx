@@ -1,12 +1,20 @@
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { SubmitFormParams } from './dtos/CreateUser'
 import logoGrowth from './assets/logo.png'
 import './styles/global.css'
 
 function App() {
   const [stateMenuButton, setStateMenuButton] = useState(false)
 
+  const { register, handleSubmit } = useForm()
+
   function handleMenuButton() {
     setStateMenuButton(!stateMenuButton)
+  }
+
+  const handleSubmitForm = async (data: SubmitFormParams) => {
+    console.log(data)
   }
 
   return (
@@ -37,33 +45,78 @@ function App() {
       </header>
       <main>
         <h2 className='title-secundary'>Formulário para cadastro de usuário</h2>
-        <form className='form-user'>
+        <form className='form-user' onSubmit={handleSubmit(handleSubmitForm)}>
           <label htmlFor='name'>Nome completo</label>
-          <input type='text' placeholder='Nome completo' name='name' />
+          <input 
+            type='text' 
+            placeholder='Nome completo' 
+            name='name'
+            ref={register({ required: true })}
+          />
 
           <label htmlFor='username'>Nome de usuário</label>
-          <input type='text' placeholder='Nome de usuário' name='username' />
+          <input 
+            type='text' 
+            placeholder='Nome de usuário' 
+            name='username'
+            ref={register({ required: true })} 
+          />
 
           <label htmlFor='email'>Email</label>
-          <input type='email' placeholder='Email' name='email' />
+          <input 
+            type='email' 
+            placeholder='Email' 
+            name='email'
+            ref={register({ required: true })}
+          />
 
           <label htmlFor='phone'>Número de celular</label>
-          <input type='text' placeholder='Número de celular' name='phone' />
+          <input 
+            type='text' 
+            placeholder='Número de celular' 
+            name='phone'
+            ref={register({ required: true })}
+          />
 
           <label htmlFor='street'>Nome da rua</label>
-          <input type='text' placeholder='Nome da rua' name='street' />
+          <input
+            type='text'
+            placeholder='Nome da rua'
+            name='street'
+            ref={register({ required: true })}
+          />
 
           <label htmlFor='suite'>Número da casa/apartamento</label>
-          <input type='text' placeholder='Número da casa/apartamento' name='suite' />
+          <input
+            type='text'
+            placeholder='Número da casa/apartamento'
+            name='suite'
+            ref={register({ required: true })}
+          />
 
           <label htmlFor='city'>Nome da cidade</label>
-          <input type='text' placeholder='Nome da cidade' name='city' />
+          <input
+            type='text'
+            placeholder='Nome da cidade'
+            name='city'
+            ref={register({ required: true })}
+          />
           
           <label htmlFor='zipcode'>CEP</label>
-          <input type='text' placeholder='Nome da rua' name='zipcode' />
+          <input
+            type='text'
+            placeholder='Nome da rua'
+            name='zipcode'
+            ref={register({ required: true })}
+          />
 
           <label htmlFor='companyName'>Nome da empresa</label>
-          <input type='text' placeholder='Nome da empresa' name='companyName' />
+          <input
+            type='text'
+            placeholder='Nome da empresa'
+            name='companyName'
+            ref={register({ required: true })}
+          />
 
           <button type='submit' className='submit-button'>
             Cadastrar
