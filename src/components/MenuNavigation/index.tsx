@@ -6,13 +6,13 @@ const MenuNavigation: FC = () => {
     <nav>
       <ul>
         <li>
-          <a href='/user'>Cadastrar usuário</a>
+          <a href='/'>Cadastrar usuário</a>
         </li>
         <li>
-          <a href='/user/post'>Criar post</a>
+          <a href='/createPost'>Criar post</a>
         </li>
         <li>
-          <a href='/allPost'>Listar post</a>
+          <a href='/posts'>Listar post</a>
         </li>
       </ul>
     </nav>
