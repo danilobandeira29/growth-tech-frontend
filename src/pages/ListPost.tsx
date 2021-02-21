@@ -10,6 +10,7 @@ const ListPost: FC = () => {
       <img src={logoGrowth} alt='Growth tech logo'/>
       <Header />
       <main>
+        <h2 className='title-secundary'>Listagem de Post</h2>
         <ul>
           <li className='post-container'>
             <div className='post-header'>
