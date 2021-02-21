@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SubmitFormParams } from '../dtos/CreatePost'
 import logoGrowth from '../assets/logo.png'
 import '../styles/global.css'
 
-function Post() {
+const Post: FC = () => {
   const [stateMenuButton, setStateMenuButton] = useState(false)
   
   const { register, handleSubmit } = useForm()
