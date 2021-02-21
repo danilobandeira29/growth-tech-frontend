@@ -6,10 +6,10 @@ import Button from '../components/Button'
 import Header from '../components/Header'
 import { SubmitFormParams } from '../dtos/CreatePost'
 
-import { api } from '../services/api'
+import api from '../services/api'
 
 import { MessageSquare } from 'react-feather'
-import logoGrowth from '../assets/logo.png'
+import logo from '../assets/logo.png'
 import '../styles/global.css'
 
 const Post: FC = () => {
@@ -27,7 +27,7 @@ const Post: FC = () => {
 
   return (
     <div className='container'>
-      <img src={logoGrowth} alt='Growth tech logo'/>
+      <img src={logo} alt='Growth tech logo'/>
       <Header />
       <main>
         <h2 className='title-secundary'>Criar post</h2>

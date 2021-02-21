@@ -1,8 +1,11 @@
 import { FC, useEffect, useState } from 'react'
+
 import Header from '../components/Header'
 import { Data, Post } from '../dtos/ListPost'
-import { api } from '../services/api'
-import logoGrowth from '../assets/logo.png'
+
+import api from '../services/api'
+
+import logo from '../assets/logo.png'
 import '../styles/global.css'
 
 const ListPost: FC = () => {
@@ -19,7 +22,7 @@ const ListPost: FC = () => {
 
   return (
     <div className='container'>
-      <img src={logoGrowth} alt='Growth tech logo'/>
+      <img src={logo} alt='Growth tech logo'/>
       <Header />
       <main>
         <h2 className='title-secundary'>Listagem de Post</h2>
