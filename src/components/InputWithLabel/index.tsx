@@ -6,7 +6,7 @@ const InputWithLabel: FC<AbstractInputWithLabel> = ({ name, type, labelAndPlaceh
     <>
       <label htmlFor={name}>{labelAndPlaceholder}</label>
       <input 
-        type={type} 
+        type={type ?? 'text'} 
         placeholder={labelAndPlaceholder} 
         name={name}
         ref={refForm}
