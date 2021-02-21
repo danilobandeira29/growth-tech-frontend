@@ -36,18 +36,6 @@ body, input, button, textarea {
   padding: 2rem;
 }
 
-header {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-ul li {
-  list-style: none;
-}
-
 .title-secundary {
   margin-top: 4rem;
 }
@@ -76,18 +64,6 @@ a {
 a:active {
   opacity: .7;
   background-color: var(--clr-gray-secundary);
-}
-
-ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-li + li {
-  margin-top: .5rem;
 }
 
 input, button, textarea {
