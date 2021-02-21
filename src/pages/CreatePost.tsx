@@ -1,9 +1,13 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
-import { SubmitFormParams } from '../dtos/CreatePost'
+
 import InputWithLabel from '../components/InputWithLabel'
 import Button from '../components/Button'
 import Header from '../components/Header'
+import { SubmitFormParams } from '../dtos/CreatePost'
+
+import { api } from '../services/api'
+
 import { MessageSquare } from 'react-feather'
 import logoGrowth from '../assets/logo.png'
 import '../styles/global.css'
@@ -11,8 +15,14 @@ import '../styles/global.css'
 const Post: FC = () => {
   const { register, handleSubmit } = useForm()
 
-  const handleSubmitForm = async (data: SubmitFormParams) => {
-    console.log(data)
+  const handleSubmitForm = async (submitFormParams: SubmitFormParams) => {
+    try {
+      console.log(submitFormParams)
+      await api.post(`user/${submitFormParams.userId}/post`, submitFormParams)
+      alert('Post criado com sucesso!')
+    } catch {
+      alert('Ocorreu um error, tente novamente!')
+    }
   }
 
   return (
