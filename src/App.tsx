@@ -1,18 +1,37 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
+
 import Header from './components/Header'
 import InputWithLabel from './components/InputWithLabel'
 import Button from './components/Button'
 import { SubmitFormParams } from './dtos/CreateUser'
+
+import { api } from './services/api'
+
 import { UserPlus } from 'react-feather'
 import logoGrowth from './assets/logo.png'
 import './styles/global.css'
 
+interface ResponseData extends SubmitFormParams {
+  id: number
+}
+
+interface Response {
+  data: ResponseData
+} 
+
+
 const App: FC = () => {
   const { register, handleSubmit } = useForm()
 
-  const handleSubmitForm = async (data: SubmitFormParams) => {
-    console.log(data)
+  const handleSubmitForm = async (submitFormParams: SubmitFormParams) => {
+    try {
+      console.log(submitFormParams)
+      const { data: { data } } = await api.post<Response>('user', submitFormParams)
+      alert(data.id)
+    } catch {
+      alert('Ocorreu um error, tente novamente!')
+    }
   }
 
   return (
