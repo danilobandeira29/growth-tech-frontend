@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 
 import Header from '../components/Header'
 import InputWithLabel from '../components/InputWithLabel'
@@ -14,11 +15,13 @@ import '../styles/global.css'
 
 const CreateUser: FC = () => {
   const { register, handleSubmit } = useForm()
+  const history = useHistory()
 
   const handleSubmitForm = async (submitFormParams: SubmitFormParams) => {
     try {
       const { data: { data } } = await api.post<Response>('user', submitFormParams)
       alert(data.id)
+      history.push('/createPost')
     } catch {
       alert('Ocorreu um error, tente novamente!')
     }
