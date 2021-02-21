@@ -1,6 +1,7 @@
 import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SubmitFormParams } from '../dtos/CreatePost'
+import InputWithLabel from '../components/InputWithLabel'
 import logoGrowth from '../assets/logo.png'
 import '../styles/global.css'
 
@@ -46,20 +47,18 @@ const Post: FC = () => {
       <main>
         <h2 className='title-secundary'>Criar post</h2>
         <form className='form-post' onSubmit={handleSubmit(handleSubmitForm)}>
-          <label htmlFor='userId'>Id de usuário</label>
-          <input
-            type='text'
-            placeholder='Id do usuário'
+          <InputWithLabel
             name='userId'
-            ref={register({ required: true})}
+            labelAndPlaceholder='Id do usuário'
+            type='text'
+            refForm={register({ required: true})}
           />
 
-          <label htmlFor='title'>Título</label>
-          <input
-            type='text'
-            placeholder='Título'
+          <InputWithLabel
             name='title'
-            ref={register({ required: true})}
+            labelAndPlaceholder='Título do post'
+            type='text'
+            refForm={register({ required: true})}
           />
 
           <label htmlFor='body'>Conteúdo</label>
