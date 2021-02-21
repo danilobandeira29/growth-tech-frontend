@@ -1,20 +1,15 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { SubmitFormParams } from '../dtos/CreatePost'
 import InputWithLabel from '../components/InputWithLabel'
 import Button from '../components/Button'
-import { Menu, MessageSquare } from 'react-feather'
+import Header from '../components/Header'
+import { MessageSquare } from 'react-feather'
 import logoGrowth from '../assets/logo.png'
 import '../styles/global.css'
 
 const Post: FC = () => {
-  const [stateMenuButton, setStateMenuButton] = useState(false)
-  
   const { register, handleSubmit } = useForm()
-
-  function handleMenuButton() {
-    setStateMenuButton(!stateMenuButton)
-  }
 
   const handleSubmitForm = async (data: SubmitFormParams) => {
     console.log(data)
@@ -23,28 +18,7 @@ const Post: FC = () => {
   return (
     <div className='container'>
       <img src={logoGrowth} alt='Growth tech logo'/>
-      <header className='header'>
-        <Button 
-          type='button'
-          icon={Menu}
-          onClick={handleMenuButton}
-        >
-          Menu
-        </Button>
-        {stateMenuButton ? (<nav>
-          <ul>
-            <li>
-              <a href='/user'>Cadastrar usuário</a>
-            </li>
-            <li>
-              <a href='/user/post'>Criar post</a>
-            </li>
-            <li>
-              <a href='/allPost'>Listar post</a>
-            </li>
-          </ul>
-        </nav>) : null}
-      </header>
+      <Header />
       <main>
         <h2 className='title-secundary'>Criar post</h2>
         <form className='form-post' onSubmit={handleSubmit(handleSubmitForm)}>
