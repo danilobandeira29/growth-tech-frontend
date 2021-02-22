@@ -20,7 +20,7 @@ const CreateUser: FC = () => {
   const handleSubmitForm = async (submitFormParams: SubmitFormParams) => {
     try {
       const { data: { data } } = await api.post<Response>('user', submitFormParams)
-      alert(data.id)
+      alert(`Copie este Id do usuário para criar um post: ${data.id}`)
       history.push('/createPost')
     } catch {
       alert('Ocorreu um error, tente novamente!')
