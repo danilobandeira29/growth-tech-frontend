@@ -1,6 +1,7 @@
 # Sumário
 - [Sobre](#-Sobre)
 - [Tecnologias](#-Tecnologias)
+- [Instalando as Dependências](#-Instalando-as-Dependências)
 - [Inicializando o Projeto](#-Inicializando-o-Projeto)
 
 ## Sobre
@@ -10,12 +11,16 @@ Essa aplicação permite criação de usuário, criação de post e listagem de 
 - ReactJS(Hooks)
 - Typescript
 
-## Inicializando o Projeto
+## Instalando as Dependências
 - Abra o terminal na pasta do projeto e execute:
 ```bash
   ## instalar as dependências(ou você pode executar 'npm install')
   $ yarn
+```
 
+## Inicializando o Projeto
+- Abra o terminal na pasta do projeto e execute:
+```bash
   ## inicializar o projeto (ou você pode executar 'npm run dev')
   $ yarn start
 ```
