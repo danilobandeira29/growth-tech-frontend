@@ -13,3 +13,7 @@ button {
 button svg {
   margin-right: 1rem;
 }
+
+button:hover {
+  cursor: pointer;
+}
